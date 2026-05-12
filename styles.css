@@ -1,0 +1,271 @@
+/* ===== PAGE LAYOUT ===== */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f0f6fa;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #2f6f8f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+
+    position: relative;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: #e75480;
+}
+
+/* ===== MOBILE MENU ===== */
+
+/* Hide buttons on desktop */
+.menu-toggle,
+.menu-close {
+    display: none;
+}
+
+/* ===== HERO ===== */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background: white;
+}
+
+.hero img {
+    width: 350px;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    background: #e75480;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+
+    transition: transform 0.2s,
+                opacity 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.green-btn {
+    background: #3fa34d;
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 20px;
+    padding: 20px;
+
+    flex: 1;
+}
+
+/* ===== WIDGETS ===== */
+.widgets {
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+    min-height: 180px;
+
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ===== QUOTE ===== */
+.quote {
+    background: white;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    background: white;
+    padding: 15px;
+    width: 250px;
+    height: 300px;
+
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    /* Smooth parallax movement */
+    transition: transform 0.05s linear;
+
+    position: relative;
+}
+
+.sidebar img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    margin: 10px 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #2f6f8f;
+    color: white;
+    padding: 15px;
+
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #e75480;
+}
+
+/* ===== WINDOW SIZE DISPLAY ===== */
+.size-display {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* ===== UNIT SELECTOR ===== */
+.size-controls {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+
+    font-size: 12px;
+}
+
+.size-controls select {
+    font-size: 12px;
+    padding: 2px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    /* Show hamburger */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Full screen menu */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+
+        width: 100%;
+        height: 100vh;
+
+        background: #282727;
+
+        display: none;
+        flex-direction: column;
+        align-items: center;
+
+        padding-top: 1rem;
+    }
+
+    /* Open menu */
+    nav.open {
+        display: flex;
+    }
+
+    /* Close button */
+    .menu-close {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        font-size: 1.8rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Menu links */
+    nav a {
+        display: block;
+        color: white;
+        text-decoration: none;
+
+        font-size: 1.3rem;
+        padding: 1rem;
+
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Dashboard */
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    /* Widgets */
+    .widgets {
+        flex-direction: column;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+    }
+}
