@@ -130,10 +130,11 @@ window.addEventListener("scroll", function () {
         window.scrollY;
 
     /*
-    Stronger movement
+    Limited movement
+    prevents footer overlap
     */
     advertBox.style.transform =
         "translateY(" +
-        scrollPosition * 0.3 +
+        Math.min(scrollPosition * 0.15, 120) +
         "px)";
 });
