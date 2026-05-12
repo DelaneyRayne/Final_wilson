@@ -18,7 +18,6 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
-
     position: relative;
 }
 
@@ -80,7 +79,6 @@ button:hover {
     grid-template-columns: 1fr 250px;
     gap: 20px;
     padding: 20px;
-
     flex: 1;
 }
 
@@ -121,10 +119,14 @@ button:hover {
     box-sizing: border-box;
     border-radius: 8px;
 
+    /* Sticky sidebar */
+    position: sticky;
+    top: 20px;
+
     /* Smooth parallax movement */
     transition: transform 0.05s linear;
 
-    position: relative;
+    align-self: start;
 }
 
 .sidebar img {
@@ -139,7 +141,6 @@ footer {
     background: #2f6f8f;
     color: white;
     padding: 15px;
-
     position: relative;
 }
 
@@ -262,6 +263,9 @@ footer {
     .sidebar {
         width: 100%;
         height: auto;
+        position: relative;
+        top: 0;
+        transform: none !important;
     }
 
     /* Footer */
